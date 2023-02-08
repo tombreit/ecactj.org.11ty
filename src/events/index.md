@@ -4,14 +4,14 @@ eleventyNavigation:
   key: Events
   order: 4
 templateEngineOverride: njk,md
+override:tags: []
 ---
 
 # {{ title }}
 
-
-{%- for news in news -%}
-  <h3>{{ news.title }}</h3>
+{%- for event in collections.events | reverse -%}
+  <h3>{{ event.data.title }}</h3>
   <p>
-    {{ news.date }}
+    {{ event.fileSlug }}
   </p>
 {%- endfor -%}

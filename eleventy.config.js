@@ -1,6 +1,7 @@
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const {EleventyHtmlBasePlugin} = require("@11ty/eleventy");
+const EleventyRssPlugin = require("@11ty/eleventy-plugin-rss");
 
 const markdownIt = require("markdown-it");
 
@@ -13,6 +14,7 @@ module.exports = function (eleventyConfig) {
     }
   });
   eleventyConfig.addPlugin(EleventyNavigationPlugin);
+  eleventyConfig.addPlugin(EleventyRssPlugin);
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy('assets');
 

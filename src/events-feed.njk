@@ -1,0 +1,33 @@
+---
+permalink: "/events-feed.xml"
+layout: null
+eleventyExcludeFromCollections: true
+override:tags: []
+metadata:
+  language: en
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ site.baseUrl }}">
+  <title>ECACTJ Events</title>
+  <subtitle>Updates on changes and additions to ECACTJ ({{ site.title }}) events.</subtitle>
+  <link href="{{ permalink | absoluteUrl(site.baseUrl) }}" rel="self"/>
+  <link href="{{ site.baseUrl }}"/>
+  <updated>{{ collections.posts | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ site.baseUrl }}</id>
+  <author>
+    <name>{{ site.responsible.name }}</name>
+    <email>{{ site.responsible.email }}</email>
+  </author>
+  {%- for event in collections.events | reverse %}
+  {%- set absolutePostUrl = event.url | absoluteUrl(metadata.url) %}
+  <entry>
+    <title>{{ event.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ event.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    {% if event.templateContent -%}
+    <content xml:lang="{{ metadata.language }}" type="html">{{ event.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    {%- endif %}
+  </entry>
+  {%- endfor %}
+</feed>
