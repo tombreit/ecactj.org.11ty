@@ -1,0 +1,10 @@
+---
+pagination:
+    data: bibtex
+    size: 1
+    alias: bibtex
+permalink: "publications/bibtex/{{ bibtex.bibtexLabel }}.bib"
+layout: "layouts/bibtex.njk"
+---
+
+{{ bibtex.bibtexItem | safe }}

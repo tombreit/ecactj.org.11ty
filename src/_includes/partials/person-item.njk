@@ -1,0 +1,61 @@
+<article id="aksenova">
+    <div class="member-basic">
+        <div class="portrait">          
+            <img 
+                class="img-fluid" 
+                src="/assets/img/person/{{ person.fileSlug }}.jpg" 
+                alt="{{ person.data.title }}" 
+                width="130" 
+                height="130"
+            >
+        </div>
+        <div class="meta">
+            <h3>
+                {{ person.data.title }}
+            </h3>
+            <p>
+                <span class="institution">     
+                    {% createAbbrLinkShortcode person.data.institution, person.data.institution_url, person.data.institution_abbr %}
+                </span>
+                <span class="department"> 
+                    {% createAbbrLinkShortcode person.data.department, person.data.department_url, person.data.department_abbr %}
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="member-detail">
+        <div class="member-contact">
+            <p>
+                <strong>Contact</strong>
+            </p>
+            <ul>
+            {%- if person.data.homepage_url -%}
+                <li>Home: <a href="{{ person.data.homepage_url }}">{{ person.data.homepage_url }}</a></li>
+            {%- endif -%}
+            {%- if person.data.email -%}
+                <li>Mail: <a href="mailto:{{ person.data.email }}">{{ person.data.email }}</a></li>
+            {%- endif -%}
+            {%- if person.data.phone -%}
+                <li>Phone: <a href="tel:{{ person.data.phone }}">{{ person.data.phone }}</a></li>
+            {%- endif -%}
+            </ul>
+
+            <strong>Research focus</strong>
+            <br>
+            <ul>
+                {%- for focus in person.data.research_focus -%}
+                    <li>
+                        {{ focus }}
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+        <div class="member-about">
+            <div class="about">
+                <strong>About</strong>
+                <br>
+                {{ person.data.cv | markdownify | safe }}
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,41 @@
+<li id="{{ publication.slug }}">
+  <div class="col1">
+      <p>
+          <strong class="title">
+            {{ publication.title }}  
+          </strong>
+          <br>
+          <span class="subtitle"></span>
+      </p>
+      <p class="authors">
+          {{ publication.authors }}
+      </p>
+      <p class="bibinfo"><small>
+          {{ publication.citationSnippet | urlize | safe }}
+        </small></p>
+  </div>
+  <div class="col2">
+      <ul class="pubsearch">
+          <li>
+            <a 
+              class="pubsearch-google-scholar" 
+              href="https://scholar.google.de/scholar?q={{ publication.title | urlencode }}"
+            >Google Scholar</a>
+          </li>
+          <li>
+            <a 
+              class="pubsearch-dnb" 
+              href="https://portal.dnb.de/opac.htm?query={{ publication.title | urlencode }}&amp;method=simpleSearch"
+            >DNB</a>
+          </li>
+          <li>
+            <a 
+            href="bibtex/{{ publication.bibtexLabel }}.bib"
+            >
+              <i class="fa fa-download"></i> 
+              Bibtex
+            </a>
+          </li>
+      </ul>
+  </div>
+</li>

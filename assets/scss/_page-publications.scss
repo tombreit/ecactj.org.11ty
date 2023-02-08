@@ -1,0 +1,59 @@
+/* ==========================================================================
+   page: publications
+   -------------------------------------------------------------------------- */
+
+
+.publications {
+    padding-left: 0;
+
+    li {
+        border-top: 1px solid silver; 
+        list-style-type: none;
+        display: block; 
+        @include clearfix;
+    }
+    strong a {
+        font-weight: normal; 
+    }
+    .authors,
+    .bibinfo {
+        margin: 0.5em 0;
+    }
+    .authors {
+        font-style: italic;
+    }
+    .bibinfo {
+        font-size: smaller;
+    }
+
+
+    
+    .pubsearch {
+        margin-top: 1em;
+        padding: 0; 
+    }
+    .pubsearch li {
+        border: none; 
+
+        @media screen and (max-width: $break-lg-min) {
+            display: inline-block;
+            margin-right: 1em; 
+        }
+    }
+
+
+    @media screen and (min-width: $break-lg-min) {
+        .col1,
+        .col2 {
+            float: left;
+        }
+        .col1 {
+            width: 76%;
+        }
+        .col2 {
+            padding-left: 2em;
+            width: 24%;
+        }
+    }
+        
+}

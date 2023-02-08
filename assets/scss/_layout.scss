@@ -1,0 +1,601 @@
+/* ==========================================================================
+  breakpoints
+
+  BOOTSTRAP breakpoints:
+  Mobile      0       - 425px
+  Tablet:     425px   - 768px;
+  Laptop:     1024px  - x;
+  -------------------------------------------------------------------------- */
+
+$break-sm-min: 452px;
+$break-md-min: 768px;
+$break-lg-min: 1024px;
+$break-xl-min: 1350px;
+
+
+/* ==========================================================================
+  layout
+
+   small:
+   +-----------------------+
+   +
+   +
+   +
+   +-----------------------+
+
+   medium:
+   +------------------------------------+
+   +- 240px + -----------+ 240px + -----+
+   +
+   +
+   +------------------------------------+
+
+   large:
+   +------------------------------------+
+   +- 400px + -----------+ 400px + -----+
+   +
+   +
+   +------------------------------------+
+
+  -------------------------------------------------------------------------- */
+
+
+$sidebars-width-medium:     240px;
+$sidebars-width-large:      400px;
+
+
+
+/* ==========================================================================
+   common / misc
+   -------------------------------------------------------------------------- */
+
+*, *:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.sr-only {
+    display: none;
+    }
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    font-family: $fontSans;
+    line-height: 1.5;
+    font-size: $font-size-base;
+}
+
+
+h1, h2, h3, h4 {
+    font-family: $fontSerif;
+    font-weight: normal;
+    }
+h1, h2 {
+    font-size: 25px;
+
+    @media screen and (min-width: $break-xl-min) {
+        font-size: 50px;
+    }
+}
+
+article > h2 {
+    padding-top: 30px;
+
+    @media screen and (max-width: $break-lg-min) {
+        padding-top: 30px;
+    }
+}
+
+
+
+.col-page article:first-of-type > h2 {
+    padding-top: 40px;
+    margin-top: 0;
+
+    @media screen and (min-width: $break-xl-min) {
+        padding-top: 80px;
+    }
+}
+
+
+
+.col-page article:first-of-type > .linked-heading {
+    padding-top: 40px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    border-bottom: 1px silver solid;
+    margin-bottom: 1em;
+    display: table;
+
+    &:target {
+        background-color: white;
+    }
+
+    @media screen and (min-width: $break-xl-min) {
+        padding-top: 80px;
+    }
+
+
+    a,
+    h2 {
+        display: table-cell;
+        margin: 0;
+        padding-right: 0.5em;
+        border-bottom: 4px solid white;
+        font-family: $fontSerif;
+
+        //border-bottom: 4px solid $accentColor;
+
+
+        &:hover {
+            border-bottom: 4px solid $accentColor;
+        }
+    }
+
+    h2 {
+        border-bottom: 4px solid $accentColor;
+        font-size: 25px;
+
+        @media screen and (min-width: $break-xl-min) {
+            font-size: 50px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        font-size: 20px;
+
+        @media screen and (min-width: $break-xl-min) {
+            font-size: 35px;
+
+        }
+    }
+
+}
+
+
+h3 {
+    font-size: 20px;
+    @media screen and (min-width: $break-xl-min) {
+        font-size: 30px;
+    }
+}
+
+
+ul {
+    padding-left: 1.1em;
+    list-style-type: circle;
+    }
+
+pre {
+    background-color: rgb(247, 247, 249);
+    border: 1px solid rgb(225, 225, 232);
+    border-radius: 4px;
+    margin-bottom: 14px;
+    padding: 9px 14px;
+    overflow: auto;
+    }
+
+dt {
+    font-weight: bold;
+    }
+dd {
+    margin-bottom: 1em;
+    }
+
+a {
+    color: darken( $accentColor, 15% );
+    text-decoration: none;
+    border-bottom: 1px dotted $accentColor;
+
+    &:hover,
+    &:focus {
+        color: $accentColorHover;
+        }
+    }
+
+
+.readon a:before,
+.back a:before,
+.pubsearch-dnb:before,
+.pubsearch-google-scholar:before,
+.p-location:before,
+a.external:before,
+a[href^="mailto"]:before  {
+    // FIX @extend .fa;
+    font-size: smaller;
+    margin-right: 6px;
+    }
+a[href^="mailto"]:before {
+    content: "\f003 ";
+    font-size: smaller;
+    }
+a.external:before {
+    content: "\f14c ";
+    font-size: smaller;
+    }
+.p-location:before {
+    content: "\f041 ";
+    font-size: medium;
+    }
+.pubsearch-google-scholar:before {
+    content: "\f1a0 ";
+    content: "\f19d ";
+    }
+.pubsearch-dnb:before {
+    content: "\f02d ";
+    }
+
+.readon a:before,
+.back a:before {
+    font-size: medium;
+    }
+.readon a:before {
+    content: "\f101 ";
+    }
+.back a:before {
+    content: "\f100 ";
+    }
+
+:target {
+   background-color: rgb(241, 241, 241);
+}
+
+
+
+
+
+/* ==========================================================================
+   columns
+   -------------------------------------------------------------------------- */
+
+.col-3,
+.col-6 {
+    float: none;
+
+    @media screen and (min-width: $break-lg-min) {
+        float: left;
+    }
+}
+.col-3 {
+    width: 100%;
+
+    @media screen and (min-width: $break-lg-min) {
+        width: 25%;
+    }
+}
+.col-6 {
+    width: 100%;
+
+    @media screen and (min-width: $break-lg-min) {
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   page layout
+   -------------------------------------------------------------------------- */
+
+.col-brandnav,
+.col-footer {
+
+    @media screen and (min-width: $break-lg-min) {
+        padding-top: 60px;
+        padding-right: 1.5em;
+        padding-left: 20px;
+
+        height: 100%;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: $sidebars-width-medium;
+    }
+    @media screen and (min-width: $break-xl-min) {
+        width: $sidebars-width-large;
+    }
+
+}
+
+
+.col-brandnav,
+.col-footer {
+  color: $fontColorOnBackground;
+}
+.col-brandnav {
+  // background-color: rgb(85, 85, 85);
+  background-color: $backgroundColorSecondary;
+}
+.col-footer {
+  // background-color: rgb(119, 119, 119);
+  background-color: lighten( $backgroundColorSecondary, 7% );
+}
+
+
+.col-brandnav {
+    @media screen and (min-width: $break-lg-min) {
+        left: 0;
+    }
+    @media screen and (min-width: $break-xl-min) {
+        padding-left: 60px;
+    }
+}
+
+
+.col-footer {
+    padding-left: 10px;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: $break-lg-min) {
+        right: 0;
+    }
+    @media screen and (min-width: $break-xl-min) {
+        padding-right: 60px;
+        padding-left: 20px;
+    }
+}
+
+
+.col-page {
+    padding: 0 10px;
+
+    @media screen and (min-width: $break-lg-min) {
+        margin-left: $sidebars-width-medium + 20px;
+        margin-right: $sidebars-width-medium + 20px;
+    }
+    @media screen and (min-width: $break-xl-min) {
+        margin-left: $sidebars-width-large + 20px;
+        margin-right: $sidebars-width-large + 20px;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   left sidebar misc
+   -------------------------------------------------------------------------- */
+.col-brandnav {
+
+    h1 {
+        font-weight: normal;
+        margin: 0;
+        font-size: 60px;
+
+        @media screen and (min-width: $break-lg-min) {
+            font-size: 40px;
+            }
+        @media screen and (min-width: $break-xl-min) {
+            font-size: 80px;
+            }
+    }
+
+    a {
+        color: $accentColor;
+        border-bottom: none;
+    }
+
+    p {
+        color: white;
+        font-family: $fontSerif;
+        font-size: $font-size-xlarge;
+        line-height: 1.2;
+        margin: 10px 0;
+    }
+
+    .partners {
+        padding: 0.5em 0;
+
+        h3 {
+            text-align: center;
+            margin: 0 0 0.25em 0;
+        }
+        ul,
+        li {
+            display: block;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            font-weight: normal;
+            display: block;
+        }
+
+        @media (min-width: $break-lg-min) {
+            position: absolute;
+            bottom: 1em;
+            right: 1.5em;
+
+            h3 {
+                text-align: right;
+            }
+        }
+
+
+        @media (min-width: $break-md-min) and (max-width: $break-lg-min) {
+            text-align: center;
+
+            h3,
+            ul,
+            li {
+                display: inline-block;
+            }
+
+            h3,
+            li {
+                margin: 0 1em;
+            }
+        }
+
+
+    }
+}
+
+
+.col-brandnav h1,
+.col-brandnav p,
+.col-brandnav li {
+    text-align: center;
+        @media screen and (min-width: $break-lg-min) {
+            text-align: right;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   right sidebar misc
+   -------------------------------------------------------------------------- */
+
+
+.col-footer {
+
+    h2 {
+        margin-top: 0;
+    }
+
+    a {
+        color: $fontColorOnBackground;
+        border-bottom: 1px dotted $fontColorOnBackground;
+        text-decoration: none;
+    }
+    .social-icons {
+        margin-top: 40px;
+    }
+    .social-icons a {
+        border-bottom: none;
+        color: $accentColor;
+        margin-right: 10px;
+    }
+    .imprint {
+        font-size: smaller;
+        margin-top: 1em;
+
+        @media screen and (min-width: $break-lg-min) {
+            position: absolute;
+            bottom: 1em;
+            line-height: 2;
+        }
+    }
+}
+
+
+
+/* ==========================================================================
+   navigation
+   -------------------------------------------------------------------------- */
+
+.col-brandnav nav {
+    @media screen and (min-width: $break-lg-min) {
+        .active a,
+        a:active,
+        a:focus {
+            border-right-color: white;
+            background-color: $accentColor;
+            color: white;
+        }
+        a:hover {
+            background-color: $accentColor;
+            color: white;
+        }
+    }
+
+
+    ul {
+        @include clearfix;
+
+        position: relative;
+        margin: 0 0 0 0; //20px
+        padding: 0;
+        background-color: $accentColor;
+
+        @media screen and (min-width: $break-lg-min) {
+            margin-top: 30px;
+            background-color: transparent;
+            right: -1.5em;
+        }
+
+        .brand {
+            display: none;
+        }
+    }
+
+    li {
+        list-style-type: none;
+        display: block;
+        width: 25%;
+        float: left;
+
+        @media screen and (min-width: $break-lg-min) {
+            width: auto;
+            float: none;
+        }
+    }
+
+
+    a {
+        display: block;
+        margin: 2px 0;
+        padding: 3px 2px;
+        border-bottom: none;
+        color: white;
+        font-weight: bold;
+        font-size: smaller;
+
+        @media screen and (min-width: $break-lg-min) {
+            display: inline-block;
+            padding: 3px 8px;
+            border-right: 1.5em solid $accentColor;
+            background-color: white;
+            font-weight: normal;
+            font-size: $font-size-large;
+            color: $accentColor;
+        }
+    }
+
+}
+
+
+
+.col-brandnav nav.sticky {
+    @media screen and (max-width: $break-lg-min) {
+
+        z-index: 9;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        margin-top: 0;
+
+        .brand {
+            display: block;
+            background-color: rgb(85, 85, 85);
+            color: white;
+            font-family: $fontSerif;
+        }
+    }
+}
+
+
+
+/* ==========================================================================
+   language switcher
+   -------------------------------------------------------------------------- */
+
+.language {
+  a, span {
+    text-transform: uppercase;
+  }
+}

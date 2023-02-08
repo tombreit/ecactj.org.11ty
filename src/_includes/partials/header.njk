@@ -1,0 +1,42 @@
+{% set navPages = collections.all | eleventyNavigation %}
+
+
+<div class="col-brandnav" id="brandnav">
+  <h1>
+    <a href="{{ '/' }}">
+      ECACTJ
+    </a>
+  </h1>
+  <p>
+    The European Criminology Group on Atrocity Crimes and Transitional Justice
+  </p>
+  <nav role="navigation">
+    <ul>
+      {%- for entry in navPages %}
+      <li class="{% if page.url == entry.url %} active {% endif %}">
+        <a  
+          href="{{ entry.url }}"
+        >
+          {{ entry.key }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <aside class="partners">
+    <h3>Partners</h3>
+    <ul>
+      <li>
+        <a class="external" href="http://www.esc-eurocrim.org/" title="">
+          European Society of Criminology
+        </a>
+      </li>
+      <li>
+        <a class="external" href="http://www.supranationalcriminology.org/" title="">
+          Supranational criminology
+        </a>
+      </li>
+    </ul>
+  </aside>
+</div>
