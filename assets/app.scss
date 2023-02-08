@@ -5,15 +5,25 @@ $backgroundColorPrimary:    rgb(239, 239, 239); // lighter gray
 $backgroundColorSecondary:  rgb(85, 85, 85); // darker gray
 $fontColorOnBackground:     white;
 
-$accentColorHover:          darken( $accentColor, 35% );
+$accentColorHover:        darken( $accentColor, 35% );
 $font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25));  // ~18px
 $font-size-xlarge:        ceil(($font-size-large * 1.2));
 
 $fontSans: "Open Sans", sans-serif;
 $fontSerif: "Playfair Display", serif;
+
+$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
    
 /* --- Set common styles ---------------------------------------------------- */
+@import "@fontsource/open-sans";
+@import "@fontsource/playfair-display";
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+
 @import "scss/_mixins";
 @import "scss/_layout";
 @import "scss/_page-publications";

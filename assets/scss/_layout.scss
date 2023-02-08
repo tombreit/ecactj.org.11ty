@@ -209,7 +209,7 @@ a {
 .p-location:before,
 a.external:before,
 a[href^="mailto"]:before  {
-    // FIX @extend .fa;
+    @extend .fa-solid;
     font-size: smaller;
     margin-right: 6px;
     }
@@ -226,7 +226,6 @@ a.external:before {
     font-size: medium;
     }
 .pubsearch-google-scholar:before {
-    content: "\f1a0 ";
     content: "\f19d ";
     }
 .pubsearch-dnb:before {

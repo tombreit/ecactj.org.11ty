@@ -11,6 +11,7 @@ module.exports = function() {
     let bibtexDicts = [];
     for (const bibtexEntry of bibtexEntries) {
         const cite = new Cite(bibtexEntry);
+        // console.log(cite)
         bibtexDicts.push({
             "bibtexLabel": cite.data[0].id,
             "bibtexItem": cite.format('bibtex'),

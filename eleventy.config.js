@@ -5,7 +5,11 @@ const markdownIt = require("markdown-it");
 
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyVitePlugin);
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: {
+      assetsInclude: ['**/*.bib'],
+    }
+  });
   eleventyConfig.addPlugin(EleventyNavigationPlugin);
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy('assets');
@@ -35,6 +39,6 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
       output: "_site"
-    }
+    },
   }
 }
