@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} | ECACTJ</title>
-    {# <link rel="stylesheet" type="text/css" href="/static/core/theme/css/theme-dark-blue.css"> #}
 </head>
 
 <body class="
@@ -16,7 +15,6 @@
 
     {% include "partials/header.njk" %}
 
-
     <div class="col-page">
        <article>
         <h2>{{ page.title }}</h2>
@@ -24,13 +22,9 @@
         </article>
     </div>
 
-
-
     {% include "partials/footer.njk" %}
-
 
     <script type="module" src="{{ '/assets/app.js' }}"></script>
     {% block extra_js %}{% endblock %}
 </body>
-
 </html>
