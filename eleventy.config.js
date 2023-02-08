@@ -1,10 +1,12 @@
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const EleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const markdownIt = require("markdown-it");
 
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(EleventyVitePlugin, {
     viteOptions: {
       assetsInclude: ['**/*.bib'],
