@@ -51,7 +51,7 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Eleventy
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} eleventy --pathprefix=ecactj.org.11ty
+          ${{ steps.detect-package-manager.outputs.manager }} run build
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

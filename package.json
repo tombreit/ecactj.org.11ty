@@ -32,7 +32,7 @@
   "scripts": {
     "clean": "del-cli $npm_package_config_11ty_outdir",
     "eleventy:dev": "npx eleventy --serve",
-    "eleventy:prod": "npx eleventy",
+    "eleventy:prod": "npx eleventy --pathprefix=ecactj.org.11ty",
     "build:parcel": "run-p build:css build:js",
     "build:css": "parcel build $npm_package_config_assets_src/app.scss --dist-dir $npm_package_config_assets_dist",
     "build:js": "parcel build $npm_package_config_assets_src/app.js --dist-dir $npm_package_config_assets_dist",
