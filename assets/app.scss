@@ -13,16 +13,16 @@ $font-size-xlarge:        ceil(($font-size-large * 1.2));
 $fontSans: "Open Sans", sans-serif;
 $fontSerif: "Playfair Display", serif;
 
-$fa-font-path: "@fortawesome/fontawesome-free/webfonts";
+$fa-font-path: "npm:@fortawesome/fontawesome-free/webfonts";
    
 /* --- Set common styles ---------------------------------------------------- */
-@import "@fontsource/open-sans";
-@import "@fontsource/playfair-display";
+@import "npm:@fontsource/open-sans/latin.css";
+@import "npm:@fontsource/playfair-display/latin.css";
 
-@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
-@import '@fortawesome/fontawesome-free/scss/brands.scss';
-@import '@fortawesome/fontawesome-free/scss/regular.scss';
-@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import 'npm:@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import 'npm:@fortawesome/fontawesome-free/scss/brands.scss';
+@import 'npm:@fortawesome/fontawesome-free/scss/regular.scss';
+@import 'npm:@fortawesome/fontawesome-free/scss/solid.scss';
 
 @import "scss/_mixins";
 @import "scss/_layout";

@@ -1,4 +1,4 @@
-import "/assets/app.scss";
+// import "/assets/app.scss";
 
 
 // like findParent, nur kürzer ;-)
