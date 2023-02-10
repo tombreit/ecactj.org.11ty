@@ -1,6 +1,5 @@
 ---
 title: Home
-layout: layouts/home.njk
 eleventyNavigation:
   key: Home
   order: 0

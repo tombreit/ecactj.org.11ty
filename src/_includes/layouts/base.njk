@@ -24,8 +24,7 @@
 
     <div class="col-page">
        <article>
-        <h2>{{ page.title }}</h2>
-        {% block contentMain %}contentMain{% endblock %}            
+        {{ content | safe }}
         </article>
     </div>
 

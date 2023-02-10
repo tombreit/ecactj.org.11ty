@@ -1,1 +1,1 @@
-module.exports = 'layouts/standard.njk'
+module.exports = 'layouts/base.njk'
