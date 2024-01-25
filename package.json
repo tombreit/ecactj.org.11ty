@@ -37,5 +37,6 @@
     "build:js": "parcel build $npm_package_config_assets_src/app.js --dist-dir $npm_package_config_assets_dist",
     "dev": "run-s clean build:parcel eleventy:dev",
     "build": "run-s clean build:parcel eleventy:prod"
-  }
+  },
+  "version": "0.0.1"
 }
